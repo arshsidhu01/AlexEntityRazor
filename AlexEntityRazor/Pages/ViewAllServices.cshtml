@@ -1,0 +1,49 @@
+﻿@page
+@using AlexEntityRazor.Model
+@model ViewAllServicesModel
+
+
+<h2>View All Services</h2>
+
+
+
+<p>
+    <a asp-page="Services">Add New Service</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Name")
+            </th>
+            <th>
+                @Html.DisplayName("Specification")
+            </th>
+            <th>
+                @Html.DisplayName("Charges")
+            </th>
+            <th>Edit | Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ServiceList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Specification)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Charges)
+                </td>
+               <td>
+                    <a asp-page="./EditServices" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-page="./ViewAllServices" onclick="return confirm('Are you sure you want to delete this item?');" asp-page-handler="Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table> 

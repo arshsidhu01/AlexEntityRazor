@@ -1,0 +1,37 @@
+﻿@page "{id:int}"
+@using AlexEntityRazor.Model
+
+@model EditQueryModel
+
+
+<div class="container">
+    <h3>Edit Query</h3>
+    <hr />
+    <br />
+    <form method="post">
+        <input asp-for="Contact.id" type="hidden" />
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="Contact.Name"></label>
+                <input asp-for="Contact.Name" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="Contact.Email"></label>
+                <input asp-for="Contact.Email" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="Contact.Message"></label>
+                <input asp-for="Contact.Message" class="form-control" />
+            </div>
+        </div>
+        <br />
+        <input type="submit" value="Update" class="btn btn-primary" />
+        <a class="btn btn-default" href="/ViewAllQuery">Cancel</a>
+    </form>
+</div>

@@ -1,0 +1,59 @@
+﻿@page
+@using AlexEntityRazor.Model @*namespace*@
+@model AddCustomerModel
+
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+
+<div class="container">
+    <h3>Add Customer</h3>
+    <hr />
+    <br />
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="customer.Name"></label>
+                <input asp-for="customer.Name" class="form-control" />
+                <span class="alert-danger" asp-validation-for="customer.Name"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="customer.Address"></label>
+                <input asp-for="customer.Address" class="form-control" />
+                <span class="alert-danger" asp-validation-for="customer.Address"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="customer.Contact"></label>
+                <input asp-for="customer.Contact" class="form-control" />
+                <span class="alert-danger" asp-validation-for="customer.Contact"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="customer.Services"></label>
+                <input asp-for="customer.Services" class="form-control" />
+                <span class="alert-danger" asp-validation-for="customer.Services"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="customer.Charges"></label>
+                <input asp-for="customer.Charges" class="form-control" />
+                <span class="alert-danger" asp-validation-for="customer.Charges"></span>
+            </div>
+        </div>
+
+
+
+        <br />
+        <input type="submit" value="Save" class="btn btn-primary" />
+        <a class="btn btn-default" href="/ViewAllCustomer">Cancel</a>
+    </form>
+</div>

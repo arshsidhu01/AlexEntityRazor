@@ -1,0 +1,55 @@
+﻿@page
+@using AlexEntityRazor.Model
+
+@model ViewAllQueryModel
+
+
+
+<h2>View All Queries</h2>
+
+
+
+<p>
+    <a asp-page="AddQuery">Add New Query</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Name")
+            </th>
+            <th>
+                @Html.DisplayName("Email")
+            </th>
+
+            <th>
+                @Html.DisplayName("Message")
+            </th>
+
+
+            <th>Edit | Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ContactList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Message)
+                </td>
+              
+                <td>
+                    <a asp-page="./EditQuery" asp-route-id="@item.id">Edit</a> |
+                    <a asp-page="./ViewAllQuery" onclick="return confirm('Are you sure you want to delete this item?');" asp-page-handler="Delete" asp-route-id="@item.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table> 

@@ -1,0 +1,35 @@
+﻿
+@page "{id:int}"
+@using AlexEntityRazor.Model
+@model EditServicesModel
+
+<div class="container">
+    <h3>Edit Services</h3>
+    <hr />
+    <br />
+    <form method="post">
+        <input asp-for="service.ID" type="hidden" />
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="service.Name"></label>
+                <input asp-for="service.Name" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="service.Specification"></label>
+                <input asp-for="service.Specification" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="service.Charges"></label>
+                <input asp-for="service.Charges" class="form-control" />
+            </div>
+        </div>
+
+        <br />
+        <input type="submit" value="Update" class="btn btn-primary" />
+        <a class="btn btn-default" href="/ViewAllServices">Cancel</a>
+    </form>
+</div>

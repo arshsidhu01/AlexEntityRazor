@@ -1,0 +1,41 @@
+﻿@page
+@using AlexEntityRazor.Model @*namespace*@
+@model ServicesModel
+
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+
+<div class="container">
+    <h3>Add Services</h3>
+    <hr />
+    <br />
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="service.Name"></label>
+                <input asp-for="service.Name" class="form-control" />
+                <span class="alert-danger" asp-validation-for="service.Name"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="service.Specification"></label>
+                <input asp-for="service.Specification" class="form-control" />
+                <span class="alert-danger" asp-validation-for="service.Specification"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="service.Charges"></label>
+                <input asp-for="service.Charges" class="form-control" />
+                <span class="alert-danger" asp-validation-for="service.Charges"></span>
+            </div>
+        </div>
+        <br />
+        <input type="submit" value="Save" class="btn btn-primary" />
+        <a class="btn btn-default" href="/allcustomer">Cancel</a>
+    </form>
+</div>  

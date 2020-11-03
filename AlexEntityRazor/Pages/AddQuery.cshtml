@@ -1,0 +1,48 @@
+﻿@page
+@using AlexEntityRazor.Model @*namespace*@
+@model AddQueryModel
+
+
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+
+<div class="container">
+    <h3>Add Query</h3>
+    <hr />
+    <br />
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="contact.Name"></label>
+                <input asp-for="contact.Name" class="form-control" />
+                <span class="alert-danger" asp-validation-for="contact.Name"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="contact.Email"></label>
+                <input asp-for="contact.Email" class="form-control" />
+                <span class="alert-danger" asp-validation-for="contact.Email"></span>
+            </div>
+        </div>
+       
+
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="contact.Message"></label>
+                <input asp-for="contact.Message" class="form-control" />
+                <span class="alert-danger" asp-validation-for="contact.Message"></span>
+            </div>
+        </div>
+
+
+
+        <br />
+        <input type="submit" value="Save Query" class="btn btn-primary" />
+        <a class="btn btn-default" href="/ViewAllQuery">Cancel</a>
+    </form>
+</div>
+
